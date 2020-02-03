@@ -5,11 +5,10 @@ import React, {useState} from 'react';
 const LikeSection = props => {
 
  
-  let [pressed, setPressed] = useState(false)
+  let [pressed, setPressed] = useState(true)
  
   const changeLikes = () => {
-    pressed ? setPressed(pressed = false): setPressed(pressed = true)
-    console.log(pressed)
+    setPressed(!pressed)
     return (pressed ? props.setLikes(props.likes+1) : props.setLikes(props.likes-1))
   }
 
